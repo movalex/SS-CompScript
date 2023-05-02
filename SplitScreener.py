@@ -1,4 +1,5 @@
 import tkinter as tk
+from typing import Union
 from ss_backend.style import colors, fonts
 from ss_backend import (
     Canvas,
@@ -160,8 +161,8 @@ class ResolveFusionAPI:
     def refresh_global(
         self,
         resolution: tuple[int, int],
-        screen_tools: list[tuple[Tool, Tool]] | None = None,
-        screen_values: list[dict[str, float]] | None = None,
+        screen_tools: Union[list[tuple[Tool, Tool]], None],
+        screen_values: Union[list[dict[str, float]], None],
     ):
         """Calls all necessary methods for when user changes settings."""
         if not (
